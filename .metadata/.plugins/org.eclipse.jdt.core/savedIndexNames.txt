@@ -8,7 +8,6 @@ INDEX VERSION 1.129+C:\Users\mackert\SpringWorkspace\.metadata\.plugins\org.ecli
 2765366934.index
 3460996802.index
 2532056057.index
-2063644951.index
 1061977141.index
 2561179376.index
 1627965821.index
@@ -20,13 +19,13 @@ INDEX VERSION 1.129+C:\Users\mackert\SpringWorkspace\.metadata\.plugins\org.ecli
 1199826107.index
 543038442.index
 391368806.index
-3575617265.index
-418545595.index
 30881555.index
+418545595.index
+3575617265.index
 2418793644.index
 2911469802.index
-2997567257.index
 1539866187.index
+2997567257.index
 3643810303.index
 1475717011.index
 520797736.index
