@@ -27,7 +27,7 @@ public class ModelT1000 implements Robot {
 		return head;
 	}
 
-	public void setHead(Head head) {
+	public void setHead1(Head head) {
 		this.head = head;
 	}
 

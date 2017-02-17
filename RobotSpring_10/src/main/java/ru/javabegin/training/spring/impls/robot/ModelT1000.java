@@ -1,5 +1,8 @@
 package ru.javabegin.training.spring.impls.robot;
 
+import java.beans.ConstructorProperties;
+import java.util.List;
+
 import ru.javabegin.training.spring.interfaces.Hand;
 import ru.javabegin.training.spring.interfaces.Head;
 import ru.javabegin.training.spring.interfaces.Leg;
@@ -13,6 +16,7 @@ public class ModelT1000 implements Robot {
 	private Leg leg;
 	private boolean soundEnabled;
 	private int year;
+	private List<String > list;
 
 	public ModelT1000() {
 	}
@@ -22,13 +26,6 @@ public class ModelT1000 implements Robot {
 		this.hand = hand;
 		this.leg = leg;
 		this.head = head;
-	}
-
-	public ModelT1000(String color, int year, boolean soundEnabled) {
-		super();
-		this.color = color;
-		this.year = year;
-		this.soundEnabled = soundEnabled;
 	}
 
 	public ModelT1000(String color, Hand hand, Head head, Leg leg, boolean soundEnabled, int year) {
@@ -41,22 +38,37 @@ public class ModelT1000 implements Robot {
 		this.year = year;
 	}
 
+	@ConstructorProperties({ "color_V2", "year_V2", "soundEnabled_V2"})
+	public ModelT1000(String color, int year, boolean soundEnabled) {
+		super();
+		this.color = color;
+		this.year = year;
+		this.soundEnabled = soundEnabled;
+	}
+
 	@Override
 	public void action() {
 		head.calc();
 		hand.catchSomething();
 		leg.go();
-		
-		System.out.println("Color: "+ color);
-		System.out.println("Year: "+ year);
-		System.out.println("sound enabled: "+ soundEnabled );
-		
-		
+		System.out.println("Color: " + color);
+		System.out.println("Year: " + year);
+		System.out.println("sound enabled: " + soundEnabled);
 	}
 
 	@Override
 	public void dance() {
 		System.out.println("T1000 is dancing!");
+	}
+
+	@Override
+	public void sayInfo() {
+		System.out.println("Color: " + color);
+		System.out.println("Year: " + year);
+		System.out.println("sound enabled: " + soundEnabled);
+		for (String string : list) {
+			System.out.println(string);
+		}
 	}
 
 	public String getColor() {
@@ -91,7 +103,7 @@ public class ModelT1000 implements Robot {
 		this.hand = hand;
 	}
 
-	public void setHead(Head head) {
+	public void setHead1(Head head) {
 		this.head = head;
 	}
 
@@ -105,5 +117,13 @@ public class ModelT1000 implements Robot {
 
 	public void setYear(int year) {
 		this.year = year;
+	}
+
+	public List<String > getList() {
+		return list;
+	}
+
+	public void setList(List<String > list) {
+		this.list = list;
 	}
 }

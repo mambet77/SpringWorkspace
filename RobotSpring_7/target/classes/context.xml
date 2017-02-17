@@ -12,7 +12,7 @@
 	
 	<property name="leg" ref="ToshibaLeg"></property>
 	<property name="hand" ref="ToshibaHand"></property>
-	<property name="head" ref="ToshibaHead"></property>
+	<property name="head1" ref="ToshibaHead"></property>
 	</bean>
 
 
