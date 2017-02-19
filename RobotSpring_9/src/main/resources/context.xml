@@ -18,11 +18,18 @@
 	</bean>
 
 
+<bean id ="T1000new" class="ru.javabegin.training.spring.impls.robot.ModelT1000">
+<constructor-arg value="gold" index="0"/>
+<constructor-arg ref="SonyHand2" index="1"/>
+<constructor-arg ref="ToshibaHead" index="2"/>
+<constructor-arg ref="SonyLeg" index="3"/>
+<constructor-arg value="true" type="boolean" index="4"/>
+<constructor-arg value="12" type="int" index="5"/>
+</bean>
 
 
 
-
-
+<alias name="ToshibaHand" alias="SonyHand2"></alias>
 
 	<bean id="SonyHand" class="ru.javabegin.training.spring.impls.sony.SonyHand" />
 	<bean id="SonyLeg" class="ru.javabegin.training.spring.impls.sony.SonyLeg" />
