@@ -38,10 +38,10 @@ public class ModelT1000 implements Robot {
 		this.year = year;
 	}
 
-	@ConstructorProperties({ "color_V2", "year_V2", "soundEnabled_V2"})
-	public ModelT1000(String color, int year, boolean soundEnabled) {
+//	@ConstructorProperties({ "color_V2", "year_V2", "soundEnabled_V2"})
+	public ModelT1000(String color_1, int year, boolean soundEnabled) {
 		super();
-		this.color = color;
+		this.color = color_1;
 		this.year = year;
 		this.soundEnabled = soundEnabled;
 	}
