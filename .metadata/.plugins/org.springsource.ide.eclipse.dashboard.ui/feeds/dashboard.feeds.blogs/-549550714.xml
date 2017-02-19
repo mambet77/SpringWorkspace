@@ -5,7 +5,46 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-02-15T01:01:00Z</updated>
+  <updated>2017-02-15T14:23:00Z</updated>
+  <entry>
+    <title>Spring Cloud Data Flow 1.2 M1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/02/15/spring-cloud-data-flow-1-2-m1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Thomas Risberg</name>
+    </author>
+    <id>tag:spring.io,2017-02-15:2844</id>
+    <updated>2017-02-15T14:23:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team, I am excited to announce the release of the first milestone of Spring Cloud Data Flow 1.2. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; A great way to start using this new release(s) is to follow the &lt;a href="http://cloud.spring.io/spring-cloud-dataflow/#spring-cloud-data-flow-implementations"&gt;release matrix&lt;/a&gt; on the project page, which includes the download coordinates and the links to the reference guide.&lt;/p&gt;
+&lt;p&gt;Over the last few weeks, we have added new features and improvements to the overall orchestration of data microservices. The following new features were included in the 1.2.0.M1 release: &lt;/p&gt;&lt;h3&gt;&lt;a href="#core" class="anchor" name="core"&gt;&lt;/a&gt;Core&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Introduce dedicated prefixes for deployment properties. Using the deployer properties is as simple as &lt;code&gt;deployer.&amp;lt;appname&amp;gt;.xxx&lt;/code&gt; as opposed to &lt;code&gt;app.&amp;lt;appname&amp;gt;.spring.cloud.deployer.xxx&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Introduce a new REST-API controller and shell support to cleanup Task Executions&lt;/li&gt;
+  &lt;li&gt;Foundation work to consolidate the use of controllers between Task deployments and Task Executions&lt;/li&gt;
+  &lt;li&gt;Consolidate REST-API call traces and return codes for consistency&lt;/li&gt;
+  &lt;li&gt;Adds &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.2.0.M1/reference/htmlsingle/#customizing-authorization"&gt;role-based access control&lt;/a&gt; to define who has access to create, deploy, destroy, or view streams/tasks. This works seamlessly in coordination with the supported &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.2.0.M1/reference/htmlsingle/#configuration-security"&gt;authentication methods&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Performance optimizations to “stream list” operation. Instead of making individual calls for each app associated with the stream, the newly introduced &lt;code&gt;MultiStateAppDeployer&lt;/code&gt; SPI operation invokes a call per stream that queries all the application statuses in a single network call&lt;/li&gt;
+  &lt;li&gt;Improves error reporting for “stream list” operation&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#dashboard" class="anchor" name="dashboard"&gt;&lt;/a&gt;Dashboard&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Adds a convenient option in “About” tab from the Dashboard to download compatible Shell application&lt;/li&gt;
+  &lt;li&gt;Adds connectivity between Tasks and Batch-jobs in the Dashboard. The batch-job “details view” can be accessed from the Task-list page and likewise, the task “details view” can be accessed from the Batch-list page.&lt;/li&gt;
+  &lt;li&gt;Adds role-based access control integration to the Dashboard&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#a-href-https-github-com-spring-cloud-stream-app-starters-out-of-the-box-stream-applications-a" class="anchor" name="a-href-https-github-com-spring-cloud-stream-app-starters-out-of-the-box-stream-applications-a"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-cloud-stream-app-starters/"&gt;Out-of-the-box Stream Applications&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Following new applications were added and it is targeted to be released in the upcoming &lt;a href="http://docs.spring.io/spring-cloud-stream-app-starters/docs/Bacon.BUILD-SNAPSHOT/reference/html/"&gt;Bacon release-train&lt;/a&gt;:&lt;br/&gt;&lt;ul&gt;&lt;br/&gt; &lt;li&gt;MongoDB Sink&lt;/li&gt;&lt;br/&gt; &lt;li&gt;PGCopy Sink&lt;/li&gt;&lt;br/&gt; &lt;li&gt;Aggregator Processor&lt;/li&gt;&lt;br/&gt; &lt;li&gt;Header-enricher Processor&lt;/li&gt;&lt;br/&gt;&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;Add improvements to core app generation framework in the app-starters project that allows selectively upgrading dependent release versions. We can independently upgrade Spring Boot, Spring Integration or any other dependency at each application level and generate kafka, rabbitmq, or any other binder based applications more easily.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Review the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/milestone/13?closed=1"&gt;1.2.0.M1 (core)&lt;/a&gt; / &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-ui/milestone/12?closed=1"&gt;1.2.0.M1 (ui)&lt;/a&gt; release markers to learn more about the incremental improvements. &lt;/p&gt;&lt;h3&gt;&lt;a href="#next-milestone" class="anchor" name="next-milestone"&gt;&lt;/a&gt;Next Milestone&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Include core foundation work to support Docker artifacts as first-class citizen in shell, dsl, and the UI.&lt;/li&gt;
+  &lt;li&gt;The ability to orchestrate “composition of batch-jobs or tasks” is making progress. A new set of DSL primitives to support this from shell/UI is underway, too.&lt;/li&gt;
+  &lt;li&gt;Significant refactoring of core constructs around controllers, dsl, and REST-APIs underway to support “application grouping” functionality. Apart from the ability to orchestrate Spring Cloud Stream or Spring Cloud Task applications, this new model would allow orchestration for any Spring Boot application. There will be an option to define the application groups and such “groups” can be tagged by &amp;ldquo;labels&amp;rdquo;, so it will be then easy to perform group operations at the “label” level such group-deploy or group-destroy. For example, a stream is a specialization of a “group” that includes source, processor(s), and sink type of applications in it.&lt;/li&gt;
+  &lt;li&gt;We envision further evolving “application grouping” capability to stream versioning, too. Stay tuned!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A few of us from the Spring Cloud Data Flow team will be at &lt;a href="https://devnexus.com/s/index"&gt;DevNexus&lt;/a&gt; next week. Please do consider attending the &lt;a href="https://spring.io/blog/2017/02/01/spring-team-at-devnexus-2017"&gt;sessions&lt;/a&gt; to learn more about these feature capabilities.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: JOOQ</title>
     <link rel="alternate" href="https://spring.io/blog/2017/02/15/spring-tips-jooq" />
@@ -433,23 +472,5 @@ We have some plans for high-level API for &lt;a href="https://kafka.apache.org/d
   &lt;li&gt;Spring Cloud Sleuth &lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/21?closed=1"&gt;1.1.2.RELEASE&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And, as always, we welcome feedback: either on &lt;a href="https://github.com/spring-cloud"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;gitter&lt;/a&gt;, on &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Cloud Foundry Manifest Editor Beta released for Visual Studio Code</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/02/03/cloud-foundry-manifest-editor-beta-released-for-visual-studio-code" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Martin Lippert</name>
-    </author>
-    <id>tag:spring.io,2017-02-03:2826</id>
-    <updated>2017-02-03T09:03:04Z</updated>
-    <content type="html">&lt;p&gt;As part of our activities to support developers around the globe building applications with Spring and deploying those apps to Cloud Foundry and PCF, we are proud to announce our first beta version of the &lt;a href="https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-manifest-yaml"&gt;Cloud Foundry Manifest editing support&lt;/a&gt; for &lt;a href="https://code.visualstudio.com/"&gt;Visual Studio Code&lt;/a&gt; (on macOS, Linux x64, and Windows).&lt;/p&gt;
-&lt;center&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Ao6Mx6Q0XKE?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;&lt;h2&gt;&lt;a href="#why-visual-studio-code" class="anchor" name="why-visual-studio-code"&gt;&lt;/a&gt;Why Visual Studio Code?&lt;/h2&gt;
-&lt;p&gt;Visual Studio Code is a lightweight and open-source code editor that runs on macOS, Linux x64, and Windows. It is based on an interesting architecture with regards to extensibility. Support for languages in Visual Studio Code gets implemented as so called “language servers”. Those language servers are independent of the editor that you use. The editor and the language server are connected using a protocol (called the language server protocol). Even though Visual Studio Code introduced this protocol, other editors and IDEs started to adopt this language server protocol - like the Eclipse IDE (from version 4.7 on) or Eclipse Che as a cloud IDE. Other lightweight editors like Sublime Text and Atom will likely offer support in the near future, too. As a result, we can focus on implementing the Cloud Foundry manifest editor support as an independent language server and you can add this support to the editor or IDE of your choice.&lt;/p&gt;
-&lt;p&gt;Visual Studio Code introduced this protocol and offers the best support for it at the moment - including a nice marketplace for those extensions that allow a smooth and easy experience installing and using them. Therefore, as a first step, our language server for Cloud Foundry manifest files is now available on that marketplace. Open your installation of Visual Studio Code, go to the extensions section, and search for “manifest”. The Cloud Foundry Manifest Editor support will show up.&lt;/p&gt;&lt;h2&gt;&lt;a href="#working-with-manifest-files" class="anchor" name="working-with-manifest-files"&gt;&lt;/a&gt;Working with manifest files&lt;/h2&gt;
-&lt;p&gt;Once installed, it helps you working with Cloud Foundry manifest files. It provides content-assist for properties and certain values, validates the property keys and values (to avoid typos and surprises when deploying the app), and provides extensive hover help.&lt;/p&gt;
-&lt;p&gt;The content-assist can also provide help entering certain values that depend on your specific Cloud Foundry target that you use. To be more specific, the tooling infers the available buildpacks as well as a list of service instances that you have around on your Cloud Foundry target. Once that information is available, it becomes super easy to define the buildpack or services in your Cloud Foundry manifest files.&lt;/p&gt;
-&lt;p&gt;In order to get the necessary information, the tooling uses the CF CLI configuration and its access token. So whatever you have configured in your CF CLI (e.g. your API endpoint + space) will be used automatically to gather the information about buildpacks and services on demand (as long as you are logged into the CF target on the CLI).&lt;/p&gt;&lt;h2&gt;&lt;a href="#outlook" class="anchor" name="outlook"&gt;&lt;/a&gt;Outlook&lt;/h2&gt;
-&lt;p&gt;This marks our first step towards implementing tooling in an IDE-agnostic way, adopting the language server protocol from Visual Studio Code - in addition to our work on the Eclipse-based Spring Tool Suite and our ongoing support for Jetbrains to improve their awesome Spring tooling in IntelliJ even further. And since this is just our first step here, there is more to come in 2017, like new language servers around Spring and Spring Boot, improved versions of the manifest editing support, and more options for editors and IDEs to plug this into. One of those options will remain the Spring Tool Suite, while other (lightweight) editors and IDEs will get awesome Spring and Spring Boot tooling that way, too. Stay tuned.&lt;/p&gt;</content>
   </entry>
 </feed>
