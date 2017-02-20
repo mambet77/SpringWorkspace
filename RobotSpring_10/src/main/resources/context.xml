@@ -19,12 +19,16 @@
 					Hallo
 				</value>
 				
-				<ref bean="DataSOurce"/>
+				<ref bean="DataSource"/>
 			
 
 			</list>
 		</property>
 
+	</bean>
+	
+	<bean name="DataSource" >
+	
 	</bean>
 
 	<bean id="T1000" class="ru.javabegin.training.spring.impls.robot.ModelT1000"
