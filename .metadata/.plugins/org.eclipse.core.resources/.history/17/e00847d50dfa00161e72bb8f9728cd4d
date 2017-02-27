@@ -1,0 +1,9 @@
+package ru.javabegin.training.spring.main;
+
+import ru.javabegin.training.spring.interfaces.Robot;
+
+public abstract class T1000Convouer implements IRobotConveyer {
+	
+	@Override
+	public abstract Robot getRobot();
+}

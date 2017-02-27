@@ -1,0 +1,24 @@
+package todo;
+
+import javax.swing.WindowConstants;
+
+public class MyTestOnCloseWindow {
+	
+	private String windowCloseInt;
+	
+	public String getWindowCloseInt() {
+		return windowCloseInt;
+	}
+	
+	public void setWindowCloseInt(String windowCloseInt) {
+		this.windowCloseInt = windowCloseInt;
+	}
+	public Integer getOnCloseValue(){
+		switch(windowCloseInt){
+		
+		case "DO_NOTHING_ON_CLOSE" : return WindowConstants.DO_NOTHING_ON_CLOSE;
+		
+		}
+		return null ;
+	}
+}

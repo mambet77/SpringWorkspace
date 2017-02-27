@@ -1,0 +1,5 @@
+package ru.javabegin.training.spring.main;
+
+
+public abstract class T1000Convouer {
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-lazy-init="true">
+
+
+
+	<bean id="T1000" class="ru.javabegin.training.spring.impls.robot.ModelT1000" autowire="byType">
+	 <replaced-method name="dance" replacer="replacementTarget">
+          
+        </replaced-method>
+
+	</bean>
+
+    <bean id="replacementTarget" class="ru.javabegin.training.spring.main.ReplacedM">
+       
+    </bean>
+
+
+
+	
+
+	<bean id="SonyHand" class="ru.javabegin.training.spring.impls.sony.SonyHand" autowire-candidate="false"/>
+<bean id="ToshibaHand" class="ru.javabegin.training.spring.impls.toshiba.ToshibaHand" />
+</beans>
