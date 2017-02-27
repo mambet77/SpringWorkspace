@@ -4,11 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="T1000" class="ru.javabegin.training.spring.impls.robot.ModelT1000">
-	
-	<constructor-arg ref="SonyHand"/>
-	<constructor-arg ref="SonyLeg"/>
-	<constructor-arg ref="ToshibaHead"/>
+	<bean id="T1000" class="ru.javabegin.training.spring.impls.robot.ModelT1000" init-method="init">
+
 	
 	<property name="leg" ref="ToshibaLeg"></property>
 	<property name="hand" ref="ToshibaHand"></property>

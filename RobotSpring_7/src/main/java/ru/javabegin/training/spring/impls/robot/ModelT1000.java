@@ -7,33 +7,11 @@ import ru.javabegin.training.spring.interfaces.Robot;
 
 public class ModelT1000 implements Robot {
 
-	public Hand getHand() {
-		return hand;
-	}
-
-	public void setHand(Hand hand) {
-		this.hand = hand;
-	}
-
-	public Leg getLeg() {
-		return leg;
-	}
-
-	public void setLeg(Leg leg) {
-		this.leg = leg;
-	}
-
-	public Head getHead() {
-		return head;
-	}
-
-	public void setHead1(Head head) {
-		this.head = head;
-	}
-
 	private Hand hand;
-	private Leg leg;
+
 	private Head head;
+
+	private Leg leg;
 
 	public ModelT1000() {
 	}
@@ -55,6 +33,36 @@ public class ModelT1000 implements Robot {
 	@Override
 	public void dance() {
 		System.out.println("T1000 is dancing!");
+	}
+	public Hand getHand() {
+		return hand;
+	}
+	public Head getHead() {
+		return head;
+	}
+
+	public Leg getLeg() {
+		return leg;
+	}
+
+	public void setHand(Hand hand) {
+		this.hand = hand;
+		System.out.println("set hand");
+	}
+
+	public void setHead1(Head head) {
+		this.head = head;
+		System.out.println("set head");
+	}
+
+	public void setLeg(Leg leg) {
+		this.leg = leg;
+		System.out.println("set leg");
+	}
+	
+	public void init(){
+		System.out.println("init");
+		
 	}
 
 }
