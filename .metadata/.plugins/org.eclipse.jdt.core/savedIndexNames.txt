@@ -1,2 +1,0 @@
-INDEX VERSION 1.129+C:\Users\mackert\SpringWorkspace\.metadata\.plugins\org.eclipse.jdt.core
-3485476056.index
