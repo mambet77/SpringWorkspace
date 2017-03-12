@@ -19,10 +19,11 @@ import ru.javabegin.training.spring.interfaces.Leg;
 import ru.javabegin.training.spring.interfaces.Robot;
 
 @Service
-public class ModelT1000 implements Robot {
+public class ModelT1000q implements Robot {
 
 	private String color;
-	@Inject
+	@Autowired
+	@Qualifier("ToshibaHand")
 	private Hand hand;
 	@Inject
 	private Head head;
@@ -34,21 +35,21 @@ public class ModelT1000 implements Robot {
 	private Map<String, Integer> mapchen;
 	private Collection<Robot> robotCollection;
 
-	public ModelT1000() {
+	public ModelT1000q() {
 	}
 
-	public ModelT1000(Collection<Robot> robotCollection) {
+	public ModelT1000q(Collection<Robot> robotCollection) {
 		this.robotCollection = robotCollection;
 	}
 
-	public ModelT1000(Hand hand, Leg leg, Head head) {
+	public ModelT1000q(Hand hand, Leg leg, Head head) {
 		super();
 		this.hand = hand;
 		this.leg = leg;
 		this.head = head;
 	}
 
-	public ModelT1000(String color, Hand hand, Head head, Leg leg, boolean soundEnabled, int year) {
+	public ModelT1000q(String color, Hand hand, Head head, Leg leg, boolean soundEnabled, int year) {
 		super();
 		this.color = color;
 		this.hand = hand;
@@ -59,7 +60,7 @@ public class ModelT1000 implements Robot {
 	}
 
 	// @ConstructorProperties({ "color_V2", "year_V2", "soundEnabled_V2"})
-	public ModelT1000(String color, int year, boolean soundEnabled) {
+	public ModelT1000q(String color, int year, boolean soundEnabled) {
 		super();
 		this.color = color;
 		this.year = year;
@@ -68,12 +69,12 @@ public class ModelT1000 implements Robot {
 
 	@Bean
 	@Qualifier("test")
-	public ModelT1000 robot() {
-		return new ModelT1000("blau", 123, true);
+	public ModelT1000q robot() {
+		return new ModelT1000q("blau", 123, true);
 	}
 
 	@Bean
-	private ModelT1000 tesRobot(@Qualifier("test") ModelT1000 mod) { //@Qualifier("test") is autowired
+	private ModelT1000q tesRobot(@Qualifier("test") ModelT1000q mod) { //@Qualifier("test") is autowired
 		System.out.println("ich bins");
 		return mod;
 	}
