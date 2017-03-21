@@ -3,11 +3,10 @@ package ru.javabegin.training.spring.dao.impls;
 import java.util.List;
 
 import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
 
 import ru.javabegin.training.spring.dao.interfaces.MP3Dao;
 import ru.javabegin.training.spring.dao.objects.MP3;
