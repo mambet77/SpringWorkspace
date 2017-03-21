@@ -6,6 +6,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -25,45 +26,58 @@ public class MyAopService  {
 	{
 		
 	}
-	
-	@After("AllMethodWithInterface()")
-	public void methodInterface()
+	 
+	@Pointcut("execution(java.lang.Integer *(int))")
+	public void AllMethodReturnInteger()
 	{
-		System.out.println("Interface klappt");
+		
+		
 	}
 	
 	
-	@Around("AllMethod()")
+//	@After("AllMethodWithInterface()")
+//	public void methodInterface()
+//	{
+//		System.out.println("Interface klappt");
+//	} 
 	
-	public Object  myService(ProceedingJoinPoint joinpoiunt){
+	@Before ("AllMethodReturnInteger()  && args(myInt)")
+	public void returningInteger(int myInt){
 		
-		System.out.println("ich bin service");
-		Object obj=null;
-		
-		
-		
-		try {
-			obj=joinpoiunt.proceed();
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		System.out.println(obj.getClass());
-		return obj;
+		System.out.println("Integer klappt " + myInt);
 	}
 	
-	
-	@AfterReturning(pointcut="AllMethod()", returning="obj" )
-	public void tesAfterRet(Object obj){
-		
-		System.out.println(obj.getClass().getSimpleName());
-	}
-	
-	@After("AllMethod() && @annotation(IMyType)")
-	public void testAnnotation()
-	{
-		System.out.println("das klappt");
-	}
+//	@Around("AllMethod()")
+//	
+//	public Object  myService(ProceedingJoinPoint joinpoiunt){
+//		
+//		System.out.println("ich bin service");
+//		Object obj=null;
+//		
+//		
+//		
+//		try {
+//			obj=joinpoiunt.proceed();
+//		} catch (Throwable e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		System.out.println(obj.getClass());
+//		return obj;
+//	}
+//	
+//	
+//	@AfterReturning(pointcut="AllMethod()", returning="obj" )
+//	public void tesAfterRet(Object obj){
+//		
+//		System.out.println(obj.getClass().getSimpleName());
+//	}
+//	
+//	@After("AllMethod() && @annotation(IMyType)")
+//	public void testAnnotation()
+//	{
+//		System.out.println("das klappt");
+//	}
 
 }

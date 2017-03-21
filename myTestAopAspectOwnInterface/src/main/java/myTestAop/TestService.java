@@ -31,6 +31,11 @@ public class TestService implements myInterface {
 		return 11;
 
 	}
+	
+	public Integer testInteger( int inttest){
+		
+		return inttest;
+	}
 
 	@Override
 	public String getText() {

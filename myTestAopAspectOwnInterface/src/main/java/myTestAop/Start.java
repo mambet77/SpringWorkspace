@@ -17,6 +17,7 @@ public class Start {
 
 		myservice.testAnnotation();
 		myservice.getText();
+		myservice.testInteger(23);
 	}
 
 }
