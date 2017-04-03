@@ -18,7 +18,7 @@ import ru.javabegin.training.spring.interfaces.Head;
 import ru.javabegin.training.spring.interfaces.Leg;
 import ru.javabegin.training.spring.interfaces.Robot;
 
-@Service
+@Repository
 public class ModelT1000q implements Robot {
 
 	private String color;

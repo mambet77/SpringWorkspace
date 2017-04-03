@@ -22,4 +22,18 @@ public interface MP3Dao {
 	List<MP3> getMP3ListByAuthor(String author);
 	Map<String, Integer> groupBy();
 
+	String getMP3ByIDV2(int id);
+
+
+
+	int getMP3CountV2(String name);
+
+	int insertV2(MP3 mp3);
+
+	void insertList(List<MP3> list);
+
+	int[] updateList(List<MP3> list);
+
+	void updateMp3(MP3 mp3);
+
 }
